@@ -16,12 +16,12 @@ const PhotoAlbumSection = () => {
   const photos = [
     {
       id: 1,
-      url: "/assets/lasbs.jpg",
+      url: "/assets/labs.jpg",
       caption: "42 Yerevan Internatioonal School",
     },
     {
       id: 2,
-      url: "/assets/labs2.jpg",
+      url: "/assets/amalya2.jpg",
       caption: "42 Yerevan Internatioonal School",
     },
     {
