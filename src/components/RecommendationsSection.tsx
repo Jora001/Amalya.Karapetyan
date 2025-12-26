@@ -2,26 +2,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Quote } from "lucide-react";
 
-const AUTO_INTERVAL = 3000;
+const AUTO_INTERVAL = 5000;
 
 const RecommendationsSection = () => {
-  const recommendation = {
-    text: "“I had a great experience working with Aren. We met at Tumo Labs, after which we applied together to 42 Yerevan. Aren is a highly responsible and intelligent individual who is deeply dedicated to his work. He consistently strives to learn new technologies and demonstrates strong algorithmic thinking. Aren works with confidence, takes initiative, and is a reliable team member. I am confident that he has great potential and will achieve strong results in his professional journey",
-    author: "Jora Hovsepyan",
-    role: "Software Engineer",
-    company: "SynapTech Agency",
-    avatar: "/assets/jor.jpg",
-  };
+  const recommendations = [
+     {
+      text: "As the Graphic Design Level Up Course coach at BOG, I am writing to confirm that Amalya Karapetyan attended my course on 29/07/2024 - 25/10/2024 During the course, they demonstrated exceptional responsibility and outstanding results and graduated with a certificate of excellence. I assure thatAmalya Karapetyan has mastered the basic know ledge and skills of the profession and is ready to start their career in the field.",
+      author: "Shushan Tonoyan",
+      role: "Coach",
+      company: "Business Development Group",
+      avatar: "/assets/bbdg.jpg",
+    },
+    {
+      text: "I am delighted to write a recommendation for our amazing UI/UX Designer, Amalya. Working with Amalya is truly productive. She is not only a talented UI/UX Designer but also highly dedicated, intelligent, and creative. Her approach to any project is always responsible and meticulous—she pays attention to every detail, achieving outstanding results. Beyond her professional qualities, she stands out for her human approach as well. She brings positive energy to the team, is easy to communicate with, and is always ready to provide support. Amalya is one of those professionals whose collaboration is not only effective but also enjoyable and inspiring.",
+      author: "Jora Hovsepyan",
+      role: "Software Engineer",
+      company: "SynapTech Agency",
+      avatar: "/assets/jor.jpg",
+    },
+   
+  ];
 
-  const [tick, setTick] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTick((t) => t + 1);
+      setIndex((i) => (i + 1) % recommendations.length);
     }, AUTO_INTERVAL);
 
     return () => clearInterval(timer);
   }, []);
+
+  const current = recommendations[index];
 
   return (
     <section
@@ -29,7 +41,6 @@ const RecommendationsSection = () => {
       className="py-32 relative overflow-hidden"
     >
       <div className="section-container relative">
-
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -49,7 +60,7 @@ const RecommendationsSection = () => {
         {/* Animated Card */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={tick}
+            key={index}
             initial={{ x: 120, opacity: 0, scale: 0.95 }}
             animate={{ x: 0, opacity: 1, scale: 1 }}
             exit={{ x: -120, opacity: 0, scale: 0.95 }}
@@ -59,30 +70,29 @@ const RecommendationsSection = () => {
             <Quote className="w-12 h-12 text-primary/30 mb-6" />
 
             <p className="text-muted-foreground leading-relaxed italic mb-10">
-              “{recommendation.text}”
+              “{current.text}”
             </p>
 
             <div className="flex items-center gap-5">
               <img
-                src={recommendation.avatar}
-                alt={recommendation.author}
+                src={current.avatar}
+                alt={current.author}
                 className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/30"
               />
               <div>
                 <h4 className="font-display font-semibold">
-                  {recommendation.author}
+                  {current.author}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  {recommendation.role}
+                  {current.role}
                 </p>
                 <p className="text-sm text-primary">
-                  {recommendation.company}
+                  {current.company}
                 </p>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
-
       </div>
     </section>
   );

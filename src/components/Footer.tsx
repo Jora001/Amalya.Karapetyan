@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { FaBehance } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/ArenTovmasyan", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/aren-tovmasyan/", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:arentovmasyan09@gmail.com", label: "Email" },
+    { icon: FaBehance, href: "https://www.behance.net/amalyakarapet3", label: "Behance" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/amalya-karapetyan-b01050284/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:amalya.karapetyan001@gmail.com", label: "Email" },
   ];
 
   return (
@@ -19,7 +20,7 @@ const Footer = () => {
               <span className="gradient-text">&lt;Portfolio /&gt;</span>
             </a>
             <p className="text-sm text-muted-foreground">
-               {currentYear} Portfolio Aren Tovmasyan  Python/Ml Engineer
+               {currentYear} Portfolio Amalya Karapetyan  UI/UX & Graphic Designer.
             </p>
           </div>
 
