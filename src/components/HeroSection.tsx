@@ -99,11 +99,11 @@ const HeroSection = () => {
       ))}
 
       <div className="section-container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 px-4 lg:px-0">
           {/* TEXT */}
           <motion.div
             className="flex-1 text-center lg:text-left"
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: easeInOut }}
           >
@@ -114,23 +114,21 @@ const HeroSection = () => {
               🎨 UI / UX Designer
             </motion.span>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold mb-6">
               I&apos;m{" "}
               <span className="gradient-text animate-gradient">Amalya</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-6">
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6">
               UI / UX &amp; Graphic Designer crafting meaningful visual experiences
             </p>
 
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-              Welcome to my portfolio. Here you can explore my UI/UX and graphic
-              design projects, as well as my professional approach to design.
-              I am open to effective collaboration and long-term professional partnerships.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-md sm:max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+              Welcome to my portfolio. Explore my UI/UX and graphic design projects, as well as my professional approach to design. I am open to effective collaboration and long-term professional partnerships.
             </p>
 
             {/* SOCIALS */}
-            <div className="flex justify-center lg:justify-start gap-4 mt-10">
+            <div className="flex justify-center lg:justify-start gap-4 mt-6">
               <motion.a
                 whileHover={{ scale: 1.15 }}
                 href="https://www.behance.net/amalyakarapet3"
@@ -166,15 +164,15 @@ const HeroSection = () => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            className="relative"
+            className="relative w-64 sm:w-80 lg:w-[460px] h-64 sm:h-80 lg:h-[460px]"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, ease: easeInOut }}
           >
-            <div className="relative w-80 h-80 lg:w-[460px] lg:h-[460px]">
+            <div className="relative w-full h-full">
               {/* IMAGE WITH ANIMATION */}
               <motion.div
-                className="absolute inset-10 rounded-full overflow-hidden border border-white/20 shadow-2xl"
+                className="absolute inset-0 rounded-full overflow-hidden border border-white/20 shadow-2xl"
                 animate={{ y: [0, -8, 0], scale: [1, 1.03, 1] }}
                 transition={{ duration: 6, repeat: Infinity, ease: easeInOut }}
               >
@@ -208,7 +206,7 @@ const HeroSection = () => {
 
               {/* FLOATING TAGS */}
               <motion.div
-                className="absolute -right-10 top-16 px-6 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
+                className="absolute right-0 sm:right-4 top-16 px-6 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
                 {...premiumTag(5, 0)}
                 style={{
                   background:
@@ -222,7 +220,7 @@ const HeroSection = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -left-12 bottom-28 px-6 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
+                className="absolute left-0 sm:left-4 bottom-28 px-6 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
                 {...premiumTag(6, 0.3)}
                 style={{
                   background:
