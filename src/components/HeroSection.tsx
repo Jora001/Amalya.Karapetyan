@@ -5,7 +5,7 @@ import {
   useTransform,
   cubicBezier,
 } from "framer-motion";
-import { ArrowDown, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin, FileText } from "lucide-react";
 import { FaBehance } from "react-icons/fa";
 
 /* ───────── EASING ───────── */
@@ -149,12 +149,14 @@ const HeroSection = () => {
                 <Linkedin className="w-5 h-5" />
               </motion.a>
 
+              {/* CV DOWNLOAD */}
               <motion.a
                 whileHover={{ scale: 1.15 }}
-                href="amalya.karapetyan001@gmail.com"
+                href="/AmalyaKarapetyanCV(3).pdf"
+                download
                 className="p-3 rounded-full bg-primary/20 text-primary shadow-[0_0_25px_hsl(var(--primary)/0.45)]"
               >
-                <Mail className="w-5 h-5" />
+                <FileText className="w-5 h-5" />
               </motion.a>
             </div>
           </motion.div>
@@ -173,15 +175,8 @@ const HeroSection = () => {
               {/* IMAGE WITH ANIMATION */}
               <motion.div
                 className="absolute inset-10 rounded-full overflow-hidden border border-white/20 shadow-2xl"
-                animate={{
-                  y: [0, -8, 0],
-                  scale: [1, 1.03, 1],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: easeInOut,
-                }}
+                animate={{ y: [0, -8, 0], scale: [1, 1.03, 1] }}
+                transition={{ duration: 6, repeat: Infinity, ease: easeInOut }}
               >
                 <img
                   src="/assets/profile-photo.jpg"
